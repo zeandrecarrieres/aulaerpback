@@ -4,31 +4,31 @@ const ProductsSchema = new mongoose.Schema(
   {
     code: {
       type: String,
-      required: true,
+      required: false,
     },
     category: {
       type: String,
-      required: true,
+      required: false,
     },
     name: {
       type: String,
-      required: true,
+      required: false,
     },
     description: {
         type: String,
-        required: true,
+        required: false,
       },
     purchase_price: {
       type: Number,
-      required: true,
+      required: false,
     },
     reference_price: {
       type: Number,
-      required: true,
+      required: false,
     },
     qtde: {
       type: Number,
-      required: true,
+      required: false,
     }
   },
   {
