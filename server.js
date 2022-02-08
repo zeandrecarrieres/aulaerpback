@@ -204,6 +204,19 @@ app.get("/users", (req, res) => {
     });
 });
 
+app.get("/users/:id", (req, res) => {
+  UsersSchema.findOne({_id: req.params.id})
+    .then((users) => {
+      return res.json(users);
+    })
+    .catch((error) => {
+      return res.status(400).json({
+        error: true,
+        message: "User not found!",
+      });
+    });
+});
+
 app.post("/users", (req, res) => {
   const users = UsersSchema.create(req.body, (error) => {
     if (error)
